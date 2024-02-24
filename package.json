@@ -10,6 +10,14 @@
     "Programming Languages"
   ],
   "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:codch"
+  ],
+  "publisher": "iserdmi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iserdmi/codch-vscode"
+  },
   "contributes": {
     "languages": [
       {
