@@ -1,24 +1,42 @@
-config:
-  openaiApiKey: 'sk-xxx'
-  chatGptModel: 'gpt-4'
-  rememberOutput: false
+[config]
+  # chatGptModel: 'gpt-4'
+  rememberOutput: false # comment here
+  rememberOutput: wevwevwev # comment here
+  test: 123
+[/config]
 
-inspiration:
-/Users/iserdmi/Dropbox/Code/xxx/backend/src/services/user/can.ts
-/Users/iserdmi/Dropbox/Code/xxx/backend/prisma/schema.prisma
+[strategy]
+Any text here /
+x: 123
+[/strategy]
 
-context:
-/Users/iserdmi/Dropbox/Code/bananygi/backend/prisma/schema.prisma
-/Users/iserdmi/Dropbox/Code/bananygi/shared/src/zod.ts
-/Users/iserdmi/Dropbox/Code/bananygi/shared/src/tx.ts
-/Users/iserdmi/Dropbox/Code/bananygi/backend/src/router/index.ts
-/Users/iserdmi/Dropbox/Code/bananygi/backend/src/services/user/can.ts
+[knowledge]
 /Users/iserdmi/Dropbox/Code/bananygi/shared/src/investmentObject.ts
-/Users/iserdmi/Dropbox/Code/bananygi/backend/src/**/input.ts
+[/knowledge]
 
-output:
+[context]
+  ### Just comment
+  # /Users/iserdmi/Dropbox/Code/bananygi/backend/src/
+  /Users/iserdmi/Dropbox/Code/bananygi/backend/prisma/schema.prisma
+  # /Users/iserdmi/Dropbox/Code/bananygi/shared/.eslintrc.yml
+  /Users/iserdmi/Dropbox/Code/bananygi/shared/src/tx.ts # comment here
+  /Users/iserdmi/Dropbox/Code/bananygi/shared/src/tx.ts
+  
+  # /Users/iserdmi/Dropbox/Code/bananygi/backend/src/services/user/can.ts
+  # /Users/iserdmi/Dropbox/Code/bananygi/shared/src/investmentObject.ts
+  # /Users/iserdmi/Dropbox/Code/bananygi/backend/src/**/input.ts
+  /Users/iserdmi/Dropbox/Code/bananygi/shared/src/tx.ts
+  /Users/iserdmi/Dropbox/Code/bananygi/shared/src/tx.ts
+  /Users/iserdmi/Dropbox/Code/bananygi/shared/src/investmentObject.ts
+[/context]
+
+[output]
 /Users/iserdmi/Dropbox/Code/bananygi/shared/src/InvestmentObjectFundraising.ts
+/Users/iserdmi/Dropbox/Code/bananygi/shared/src/InvestmentObjectFundraising.ts
+[/output]
 
-task:
+[task]
 any text
-multiline text
+# multiline text
+text againx
+[/task]

@@ -2,13 +2,22 @@
   "comments": {
     "lineComment": "#"
   },
-  "brackets": [],
   "autoClosingPairs": [
+    ["{", "}"],
+    ["[", "]"],
     ["\"", "\""],
     ["'", "'"]
   ],
   "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
     ["\"", "\""],
     ["'", "'"]
-  ]
+  ],
+  "folding": {
+    "markers": {
+      "start": "^\\s*\\[(config|strategy|defaultTask|knowledge|context|output|task)\\]",
+      "end": "^\\s*\\[/\\1\\]"
+    }
+  }
 }

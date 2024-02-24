@@ -2,34 +2,57 @@
   "$schema": "http://json.schemastore.org/tmLanguage",
   "name": "CODCH",
   "scopeName": "source.codch",
+  "fileTypes": ["codch"],
   "patterns": [
     {
-      "name": "comment.line.codch",
-      "match": "#.*$"
+      "include": "#comment"
+    },
+    {
+      "include": "#configSection"
     },
     {
       "name": "keyword.control.codch",
-      "match": "\\[(config|strategy|defaultTask|context|output|task)\\]\\n"
+      "match": "\\[(config|strategy|defaultTask|knowledge|context|output|task)\\]\\n"
     },
     {
       "name": "keyword.control.codch",
-      "match": "\\[/(config|strategy|defaultTask|context|output|task)\\]?"
-    },
-    {
-      "begin": "\\[(config|strategy|defaultTask|context|output|task)\\]",
-      "end": "\\[/\\1\\]",
-      "name": "meta.section.codch",
-      "patterns": [
-        {
-          "include": "#comment"
-        }
-      ]
+      "match": "\\[/(config|strategy|defaultTask|knowledge|context|output|task)\\]?"
     }
   ],
   "repository": {
     "comment": {
       "name": "comment.line.codch",
       "match": "#.*$"
+    },
+    "configSection": {
+      "begin": "\\[(config)\\]\\n",
+      "end": "\\[/\\1\\]",
+      "name": "keyword.control.codch",
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "name": "variable.parameter.codch",
+          "match": "^\\s*([\\w]+):"
+        },
+        {
+          "name": "keyword.control.codch",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "string.quoted.double.codch",
+          "match": "\"[^\"]*\""
+        },
+        {
+          "name": "string.quoted.single.codch",
+          "match": "'[^']*'"
+        },
+        {
+          "name": "constant.numeric.codch",
+          "match": "\\b\\d+\\b"
+        }
+      ]
     }
   }
 }
