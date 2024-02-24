@@ -34,13 +34,14 @@ class CodchLinkProvider {
       let match;
       while ((match = filePathRegex.exec(text)) !== null) {
         const pathsBlock = match[2].trim();
-        const paths = pathsBlock.split(/\n/);
-        let lastProcessdLineEndIndex = match.index + match[0].indexOf(pathsBlock);
-        for (let filePath of paths) {
+        const pathsLines = pathsBlock.split(/\n/);
+        let lastProcessedLineEndIndex = match.index + match[0].indexOf(pathsBlock);
+        for (let pathLine of pathsLines) {
+          const filePath = pathLine.replace(/^# ?/, '');
           const filePathAbs = path.isAbsolute(filePath) ? filePath : path.join(path.dirname(document.uri.fsPath), filePath);
-          const filePathStartIndex = lastProcessdLineEndIndex + 1
-          const filePathEndIndex = filePathStartIndex + filePath.length
-          lastProcessdLineEndIndex = filePathEndIndex
+          const filePathStartIndex = lastProcessedLineEndIndex + 1
+          const filePathEndIndex = filePathStartIndex + pathLine.length
+          lastProcessedLineEndIndex = filePathEndIndex
           const range = new vscode.Range(
             document.positionAt(filePathStartIndex),
             document.positionAt(filePathEndIndex)
