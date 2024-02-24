@@ -1,0 +1,41 @@
+{
+  "name": "codch-vscode",
+  "displayName": "codch-vscode",
+  "description": "CODCH Language Support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "codch",
+        "aliases": [
+          "codch",
+          "CODCH"
+        ],
+        "extensions": [
+          ".codch"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "codch",
+        "scopeName": "source.codch",
+        "path": "./syntaxes/codch.tmLanguage.json"
+      }
+    ],
+    "documentLinkProviders": [
+      {
+        "language": "codch",
+        "scheme": "file"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+config:
+  openaiApiKey: 'sk-xxx'
+  chatGptModel: 'gpt-4'
+  rememberOutput: false
+
+inspiration:
+/Users/iserdmi/Dropbox/Code/xxx/backend/src/services/user/can.ts
+/Users/iserdmi/Dropbox/Code/xxx/backend/prisma/schema.prisma
+
+context:
+/Users/iserdmi/Dropbox/Code/bananygi/backend/prisma/schema.prisma
+/Users/iserdmi/Dropbox/Code/bananygi/shared/src/zod.ts
+/Users/iserdmi/Dropbox/Code/bananygi/shared/src/tx.ts
+/Users/iserdmi/Dropbox/Code/bananygi/backend/src/router/index.ts
+/Users/iserdmi/Dropbox/Code/bananygi/backend/src/services/user/can.ts
+/Users/iserdmi/Dropbox/Code/bananygi/shared/src/investmentObject.ts
+/Users/iserdmi/Dropbox/Code/bananygi/backend/src/**/input.ts
+
+output:
+/Users/iserdmi/Dropbox/Code/bananygi/shared/src/InvestmentObjectFundraising.ts
+
+task:
+any text
+multiline text
