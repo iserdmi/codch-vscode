@@ -4,90 +4,32 @@
   "scopeName": "source.codch",
   "patterns": [
     {
-      "include": "#config_section"
+      "name": "comment.line.codch",
+      "match": "#.*$"
     },
     {
-      "include": "#paths_section"
+      "name": "keyword.control.codch",
+      "match": "\\[(config|strategy|defaultTask|context|output|task)\\]\\n"
     },
     {
-      "include": "#task_section"
+      "name": "keyword.control.codch",
+      "match": "\\[/(config|strategy|defaultTask|context|output|task)\\]?"
+    },
+    {
+      "begin": "\\[(config|strategy|defaultTask|context|output|task)\\]",
+      "end": "\\[/\\1\\]",
+      "name": "meta.section.codch",
+      "patterns": [
+        {
+          "include": "#comment"
+        }
+      ]
     }
   ],
   "repository": {
-    "config_section": {
-      "patterns": [
-        {
-          "name": "keyword.other.section.codch",
-          "match": "^config:$"
-        },
-        {
-          "begin": "(config:)",
-          "beginCaptures": {
-            "1": {
-              "name": "keyword.other.section.codch"
-            }
-          },
-          "end": "(?=^\\w+:)",
-          "patterns": [
-            {
-              "include": "#yaml_content"
-            }
-          ]
-        }
-      ]
-    },
-    "paths_section": {
-      "patterns": [
-        {
-          "name": "keyword.other.section.codch",
-          "match": "^(inspiration|context|output):$"
-        },
-        {
-          "begin": "(inspiration|context|output):",
-          "beginCaptures": {
-            "0": {
-              "name": "keyword.other.section.codch"
-            }
-          },
-          "end": "(?=^\\w+:)",
-          "patterns": [
-            {
-              "name": "string.quoted.path.codch",
-              "match": "^\\s*-\\s*.*$"
-            }
-          ]
-        }
-      ]
-    },
-    "task_section": {
-      "patterns": [
-        {
-          "name": "keyword.other.section.codch",
-          "match": "^task:$"
-        },
-        {
-          "begin": "(task:)",
-          "beginCaptures": {
-            "1": {
-              "name": "keyword.other.section.codch"
-            }
-          },
-          "end": "(?=^\\w+:)",
-          "patterns": [
-            {
-              "name": "string.unquoted.plain-text.codch",
-              "match": ".*"
-            }
-          ]
-        }
-      ]
-    },
-    "yaml_content": {
-      "patterns": [
-        {
-          "include": "source.yaml"
-        }
-      ]
+    "comment": {
+      "name": "comment.line.codch",
+      "match": "#.*$"
     }
   }
 }
